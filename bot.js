@@ -39,7 +39,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'ayuda':
                 bot.sendMessage({
                     to: channelID,
-                    message:'``` Comandos: /hola /pelusa /mariquito /zurdo /enano /comunista /jose ```'
+                    message:'``` Comandos: /hola /pelusa /mariquito /enano /comunista /jose /meme ```'
                 });
             break;
             //
