@@ -29,7 +29,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'ayuda':
                 bot.sendMessage({
                     to: channelID,
-                    message:'``` Comandos: /hola /pelusa /mariquito /zurdo /enano /comunista ```'
+                    message:'``` Comandos: /hola /pelusa /mariquito /zurdo /enano /comunista /jose ```'
                 });
             break;
             //
@@ -67,10 +67,18 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: '¡Qué boludos son los comunistas!'
                 });
             break;
+            //
             case 'enano':
                 bot.sendMessage({
                     to: channelID,
                     message: 'Una vez cuando estabamos medio mamelucos metimos como ocho en un fiat 600'
+                });
+            break;
+            //
+            case 'jose':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Por favor, no me lo recuerdes...'
                 });
             break;
          }
