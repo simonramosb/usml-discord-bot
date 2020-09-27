@@ -31,7 +31,7 @@ bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
-
+    console.log("Cantidad de memes:", a); 
 
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
@@ -64,7 +64,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'ayuda':
                 bot.sendMessage({
                     to: channelID,
-                    message:'``` Comandos: /hola /pelusa /mariquito /enano /comunista /jose /meme ```'
+                    message:'``` Comandos: /hola /pelusa /mariquito /enano /comunista /jose /meme /user ```'
                 });
             break;
             //
@@ -110,8 +110,14 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
             //
+            case 'user':
+                bot.sendMessage({
+                    to: channelID,
+                    message: '```\n El gran Userkaft (Mi creador), salvaguardó el honor de la USML en la cooperativa con ARGA el 25/09/2020. \n \nParapetado con su equipo de fuego, a su suerte y con un "resuelvan" por parte del lider de malla, pudo distinguir a los aliados que estaba encañonando el ametrallador y paró una orden de fuego que los hubiuse aniquilado. \n\n Desde ese día, la USML está en deuda con el.```'
+                });
+            break;
+            //
             case 'meme':
-
                 /////////////////
                 const num = (Math.floor(Math.random()* all.length)+1).toString();
                 bot.uploadFile({
