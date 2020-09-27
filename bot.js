@@ -113,7 +113,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'user':
                 bot.sendMessage({
                     to: channelID,
-                    message: '```\n El gran Userkaft (Mi creador), salvaguardó el honor de la USML en la cooperativa con ARGA el 25/09/2020. \n \nParapetado con su equipo de fuego, a su suerte y con un "resuelvan" por parte del lider de malla, pudo distinguir a los aliados que estaba encañonando el ametrallador y paró una orden de fuego que los hubiuse aniquilado. \n\n Desde ese día, la USML está en deuda con el.```'
+                    message: '```\n El gran Userkaft (Mi creador), salvaguardó el honor de la USML en la cooperativa con ARGA el 25/09/2020. \n \nParapetado con su equipo de fuego, a su suerte y con un "resuelvan" por parte del lider de malla, pudo distinguir a los aliados que estaba encañonando el ametrallador y paró una orden de fuego que los hubiese aniquilado. \n\n Desde ese día, la USML está en deuda con el.```'
                 });
             break;
             //
