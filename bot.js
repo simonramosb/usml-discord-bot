@@ -81,7 +81,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'jose':
                 bot.sendMessage({
                     to: channelID,
-                    message: 'Por favor, no me lo recuerdes...  https://i.imgur.com/8TT65kc.png '
+                    message: 'Por favor, no me lo recuerdes...'
                 });
             break;
             //
