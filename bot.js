@@ -4,7 +4,17 @@ var auth = require('./auth.json');
 
 
 
+const fs = require("fs");
+let directory_name = "memes"; 
+let filenames = fs.readdirSync(directory_name);
 
+var all = new Array();
+let a = 0;
+filenames.forEach((file) => { 
+    console.log("File:", file); 
+    all[a] = file.toString();
+    a++;
+}); 
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -23,13 +33,28 @@ bot.on('ready', function (evt) {
     logger.info(bot.username + ' - (' + bot.id + ')');
 
 
-
-
-
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `/`
+
+    // if (message.substring(0, 1) == '-') {
+    //     var argsS = message.substring(1).split(' ');
+    //     var cmdS = argsS[0];
+       
+    //     argsS = argsS.splice(1);
+    //     switch(cmdS) {
+    //         case 'play':
+    //             bot.sendMessage({
+    //                 to: channelID,
+    //                 message:'``` FLACO DEJA DE ROMPER LAS BOLAS CON LA MÚSICA ```'
+    //             });
+    //         break;
+    //         //
+    //     }
+    // }
+
+
     if (message.substring(0, 1) == '/') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
@@ -86,17 +111,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
             //
             case 'meme':
-                const fs = require("fs");
-                let directory_name = "memes"; 
-                let filenames = fs.readdirSync(directory_name);
-                
-                var all = new Array();
-                let a = 0;
-                filenames.forEach((file) => { 
-                    console.log("File:", file); 
-                    all[a] = file.toString();
-                    a++;
-                }); 
+
                 /////////////////
                 const num = (Math.floor(Math.random()* all.length)+1).toString();
                 bot.uploadFile({
