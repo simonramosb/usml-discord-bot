@@ -64,13 +64,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
             //
-            case 'zurdo':
-                bot.sendMessage({
-                    to: channelID,
-                    message: '¡Al falcon!'
-                });
-            break;
-            //
             case 'comunista':
                 bot.sendMessage({
                     to: channelID,
