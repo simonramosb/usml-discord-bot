@@ -1,6 +1,11 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
+
+
+
+
+
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -16,6 +21,11 @@ bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
+
+
+
+
+
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
@@ -78,8 +88,33 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'jose':
                 bot.sendMessage({
                     to: channelID,
-                    message: 'Por favor, no me lo recuerdes...'
+                    message: 'Por favor, no me lo recuerdes...  https://i.imgur.com/8TT65kc.png '
                 });
+            break;
+            //
+            case 'meme':
+                const fs = require("fs");
+                let directory_name = "memes"; 
+                let filenames = fs.readdirSync(directory_name);
+                
+                var all = new Array();
+                let a = 0;
+                filenames.forEach((file) => { 
+                    console.log("File:", file); 
+                    all[a] = file.toString();
+                    a++;
+                }); 
+                /////////////////
+                const num = (Math.floor(Math.random()* all.length)+1).toString();
+                bot.uploadFile({
+                    to: channelID,
+                    file: `./memes/${all[num]}`
+                });
+                // DEBUG MENSAJE
+                // bot.sendMessage({
+                //     to: channelID,
+                //     message: `${all.length}`
+                // });
             break;
          }
      }
