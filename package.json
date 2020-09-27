@@ -1,0 +1,11 @@
+{
+    "name": "QuasarBot",
+    "version": "1.0.0",
+    "description": "Quasar Gamers community bot",
+    "main": "bot.js",
+    "author": "Userkaft",
+    "dependencies": {
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "winston": "^3.2.1"
+    }
+}
