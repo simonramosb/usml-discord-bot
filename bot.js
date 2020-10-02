@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 
-
+let comandos = "Comandos: /hola /pelusa /mariquito /enano /comunista /jose /meme /user /winrate";
 
 const fs = require("fs");
 let directory_name = "memes"; 
@@ -32,6 +32,10 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
     console.log("Cantidad de memes:", a); 
+    bot.sendMessage({
+        to: "718880107007180911",
+        message:`@everyone \n \n :love_you_gesture:  ¡BOT ON-LINE! \n :fire:  ${comandos}  \n :joy:   Cantidad de memes: ${a}`
+    });
 
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
@@ -64,7 +68,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'ayuda':
                 bot.sendMessage({
                     to: channelID,
-                    message:'``` Comandos: /hola /pelusa /mariquito /enano /comunista /jose /meme /user ```'
+                    message:`${comandos}`
                 });
             break;
             //
@@ -130,6 +134,21 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 //     message: `${all.length}`
                 // });
             break;
+                //
+            case 'winrate':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Te querés matar, gringo'
+                });
+                bot.uploadFile({
+                    to: channelID,
+                    file: './winrate/1.png'
+                });
+                bot.uploadFile({
+                    to: channelID,
+                    file: './winrate/2.png'
+                });
+            break;
          }
      }
 });
@@ -140,3 +159,21 @@ bot.on("guildMemberAdd", (user) => {
     channel.send('Hola ' + user + ' bienvenido al discord de la USML. Todo dentro de la USML, nada fuera de ella!'); 
 
 });
+
+
+// //type npm install discord-misic-system --save
+// //type npm install discord.js --save
+// //type node .
+// //see your music bot is ready :] enjoy I LOVE MY INDIA
+
+
+// const MusicBot = require("discord-music-system"); // Require the module
+ 
+// const bot = new MusicBot({ // Create the bot
+//     token: ("type you bot token here"), // You can find the token at https://discord.com/developers/applications/
+//     ytApiKey: ("Your Youtube api here"), // Video to explain how to get it: https://www.youtube.com/watch?v=VqML5F8hcRQ
+//     prefix: 'in$', // Example: /
+//     game: 'sanikava `in$`' // Example: /help
+// });
+ 
+// bot.run(); // Run the bot
